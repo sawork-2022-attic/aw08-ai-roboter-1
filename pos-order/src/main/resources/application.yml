@@ -1,0 +1,36 @@
+server:
+  port: 0
+
+spring:
+  jpa:
+    show-sql: true
+  application:
+    name: cart-service
+  cache:
+    cache-names: products
+#  profiles:
+#    active: production
+  instance:
+    # enable to register multiple app instances with a random server port
+    instance-id: ${spring.application.name}:${random.uuid}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    url: jdbc:mysql://localhost:3306/micropos
+    username: root
+    password: wxyv@0.
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    refresh:
+      enable: true
+
+springdoc:
+  api-docs:
+    enabled: true
+
